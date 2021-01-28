@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PruebaUnops.Models.INCIDENCIA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CLASIFICACION.NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ESTADO.NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRIORIDAD.NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USUARIO.NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_INCIDENCIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASUNTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HORAS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLASIFICACION.NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ESTADO.NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIORIDAD.NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USUARIO.NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_INCIDENCIA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASUNTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HORAS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PRIORIDAD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PRIORIDAD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PRIORIDAD })
+        </td>
+    </tr>
+}
+
+</table>
